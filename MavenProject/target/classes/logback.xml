@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<configuration scan="true" scanPeriod="30 seconds">//scanPeriod 配置档配置文件改动时候自动更新时间  
+    <appender name="file"  
+        class="ch.qos.logback.core.rolling.RollingFileAppender">  
+        <file>/logs/logback.log</file>//指定日志输出到硬盘的目录  ，这个是D盘根目录下
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+            <fileNamePattern>logs/xxx.%d{yyyy-MM-dd}.log.zip</fileNamePattern>  
+        </rollingPolicy>  
+        <layout class="ch.qos.logback.classic.PatternLayout">  
+                     <span style="font-family:SimSun;">//打印日志输出的格式</span>  
+<span style="font-family:SimSun;">                     </span><pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{80} -%msg%n</pattern>  
+        </layout>  
+    </appender>  
+        //设置Logger打印的等级  <span style="color:#FF6666;"><!-- 若是需要打印mybatis的sql语句,slf4j内部以实现只需要把level等级设为debug即可 --></span>  
+    <root level="DEBUG">  
+        <appender-ref ref="file" /><span style="font-family:SimSun;">//与上面配置的appender name对应</span>  
+    </root>  
+</configuration>  
