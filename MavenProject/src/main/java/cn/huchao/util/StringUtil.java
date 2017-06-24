@@ -1,5 +1,8 @@
 package cn.huchao.util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author huchao
  * @description
@@ -59,11 +62,29 @@ public class StringUtil {
 		}
 	}
 
+	/**
+	 * 判断一个字符串是不是手机号
+	 * 
+	 * @author huchao
+	 * @param phone
+	 * @return
+	 */
+	public static boolean isMobilePhone(String phone) {
+		if (null == phone) {
+			return false;
+		} else {
+			Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0-9]))\\d{8}$");
+			Matcher m = p.matcher(phone);
+			return m.matches();
+		}
+	}
+
 	public static void main(String[] args) {
-		String a = null;
+		String a = "18239639432   ";
 		System.out.println(StringUtil.isNotEmpty(a));
 		System.out.println(StringUtil.isEmpty(a));
 		System.out.println(StringUtil.clearBlank(a));
+		System.out.println(StringUtil.isMobilePhone(a));
 	}
 
 }
