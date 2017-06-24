@@ -62,6 +62,7 @@ public class RandomUtil {
 		stb.append(randomInt(length));
 		return stb.toString();
 	}
+
 	/**
 	 * 
 	 * @param length，随机数的长度，随机数的种类，如数字，字母，数字字母混合all

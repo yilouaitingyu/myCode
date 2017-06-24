@@ -4,14 +4,18 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 
  * @author huchao
- *	@2017年6月12日
- *	@description
- *时间的工具类，还欠缺个日志处理，与异常处理
+ * @2017年6月12日
+ * @description 时间的工具类，还欠缺个日志处理，与异常处理
  */
 public final class DateUtil {
+	static Logger logger = LoggerFactory.getLogger(DateUtil.class);
+
 	/** Private Constructor **/
 	private DateUtil() {
 	}
@@ -26,6 +30,7 @@ public final class DateUtil {
 		String YYYYMMDDHHMMSSSSS = "yyyyMMddHHmmssSSS";
 		String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
 	}
+
 	/**
 	 * 将Date类型转换成String类型
 	 * 
@@ -47,7 +52,7 @@ public final class DateUtil {
 	 * @return String
 	 */
 	public static String date2String(Date date, String pattern) {
-		if (date == null || pattern == null){
+		if (date == null || pattern == null) {
 			return null;
 		}
 		return new SimpleDateFormat(pattern).format(date);
@@ -65,6 +70,7 @@ public final class DateUtil {
 		try {
 			return format.parse(date);
 		} catch (ParseException e) {
+			logger.error("格式化日期异常：将string转date错误", e);
 			return null;
 		}
 	}
