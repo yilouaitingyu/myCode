@@ -16,6 +16,9 @@ public class RandomUtil {
 	private static final String STR = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	private static final String ALL = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
+	/** 私有构造器 **/
+	private RandomUtil() {
+	}
 	/**
 	 * @description 生成一个A-Z，a-z之间的随机字符串，如oUCMpeLZ
 	 * @param length

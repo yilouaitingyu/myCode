@@ -9,6 +9,10 @@ import java.util.regex.Pattern;
  * @date 2017年6月24日
  */
 public class StringUtil {
+	/** 私有构造器 **/
+	private StringUtil() {
+	}
+
 	/**
 	 * 判断传入的是否为空字符串，当为null和""时，返回true
 	 * 

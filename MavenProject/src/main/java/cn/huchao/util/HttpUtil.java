@@ -17,10 +17,12 @@ import java.util.Map.Entry;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 /**
  * 待整理，需要试验对不对，现在有post和get，还需要https的，以后一个一个的添加
+ * 
  * @author huchao
- *	@description
+ * @description
  * @date 2017年6月25日
  */
 public class HttpUtil {
@@ -28,6 +30,12 @@ public class HttpUtil {
 	private static final int TIME_OUT = 15;
 	private static final String DEFAULT_HTTP_ENCODING = "UTF-8";
 	private static final String HTTP_GET = "GET";
+
+	/**
+	 * 私有构造器
+	 */
+	private HttpUtil() {
+	}
 
 	/**
 	 * 向指定 URL 发送POST方法的请求
