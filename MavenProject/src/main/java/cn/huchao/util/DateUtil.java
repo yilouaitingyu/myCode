@@ -2,6 +2,7 @@ package cn.huchao.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -11,7 +12,7 @@ import org.slf4j.LoggerFactory;
  * 
  * @author huchao
  * @2017年6月12日
- * @description 时间的工具类，还欠缺个日志处理，与异常处理
+ * @description 时间的工具类，
  */
 public final class DateUtil {
 	private static final Logger logger = LoggerFactory.getLogger(DateUtil.class);
@@ -73,5 +74,35 @@ public final class DateUtil {
 			logger.error("格式化日期异常：将string转date错误", e);
 			return null;
 		}
+	}
+
+	/**
+	 * 得到几天前的时间
+	 * 
+	 * @author huchao
+	 * @param d
+	 * @param day
+	 * @return
+	 */
+	public static Date getDateBefore(Date d, int day) {
+		Calendar now = Calendar.getInstance();
+		now.setTime(d);
+		now.set(Calendar.DATE, now.get(Calendar.DATE) - day);
+		return now.getTime();
+	}
+
+	/**
+	 * 得到几天后的时间
+	 * 
+	 * @author huchao
+	 * @param d
+	 * @param day
+	 * @return
+	 */
+	public static Date getDateAfter(Date d, int day) {
+		Calendar now = Calendar.getInstance();
+		now.setTime(d);
+		now.set(Calendar.DATE, now.get(Calendar.DATE) + day);
+		return now.getTime();
 	}
 }
