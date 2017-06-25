@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * @description 时间的工具类，还欠缺个日志处理，与异常处理
  */
 public final class DateUtil {
-	static Logger logger = LoggerFactory.getLogger(DateUtil.class);
+	private static final Logger logger = LoggerFactory.getLogger(DateUtil.class);
 
 	/** Private Constructor **/
 	private DateUtil() {
